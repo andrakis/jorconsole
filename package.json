@@ -1,0 +1,38 @@
+{
+  "name": "jorconsole",
+  "version": "0.0.1",
+  "description": "Run a Virtual Machine using Jor1k as the platform",
+  "contributors": [],
+  "keywords": [
+    "or1k",
+    "emulation",
+    "virtual machine"
+  ],
+  "author": "Julian Thatcher",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/andrakis/jorconsole/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/andrakis/jorconsole.git"
+  },
+  "main": "index.html",
+  "dependencies": {
+    "blessed": "^0.1.81",
+    "canvas": "*",
+    "jor1k": "s-macke/jor1k"
+  },
+  "devDependencies": {
+    "jshint": "latest",
+    "expect": "^1.3.0",
+    "lab": "^5.2.0"
+  },
+  "scripts": {},
+  "engines": {
+    "node": ">= 5.0.0"
+  },
+  "vim": {
+    "vim": "# vim: set et ts=2"
+  }
+}
