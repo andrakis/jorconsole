@@ -32,11 +32,19 @@ of the text rendering (including special characters and control codes.)
 What does not work
 ------------------
 
+* Pasting content into the emulator (only the first character is taken)
 * Special keyboard keys (ctrl+ variants)
 * Framebuffer
-* Text input on Windows (see W1)
+* Text input on Cygwin (see W1)
 * Networking
 
+
+Little Tricks
+-------------
+
+* Press CTRL+P to print out the CPU state
+* Press CTRL+X to exit the emulator
+* CTRL+C should be captured by the emulator, but under Cygwin it quits the program
 
 Feature planning
 ----------------
@@ -57,10 +65,15 @@ The order of features is intended to be:
 Workarounds
 -----------
 
-* W1 Workaround 1: Text input on Windows
+* W1 Workaround 1: Text input on Cygwin
 
 	Since Cygwin and others do not provide a TTY interface, there are issues
 	with the keyboard input on the emulator running under Windows.
+
+	A workaround exists: run node from a cmd window instead. Everything seems
+	to work pretty well using a standard Windows cmd interface, but is broken
+	on Cygwin.
+
 	Specifically, the input buffer takes only a single keypress, and then
 	ignores the rest of the input. This means to run any command, you must
 	type each character followed by a newline.
