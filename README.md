@@ -32,7 +32,7 @@ of the text rendering (including special characters and control codes.)
 What does not work
 ------------------
 
-* Special keyboard keys (arrows, ctrl+ variants)
+* Special keyboard keys (ctrl+ variants)
 * Framebuffer
 * Text input on Windows (see W1)
 * Networking
