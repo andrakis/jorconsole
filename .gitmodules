@@ -1,0 +1,4 @@
+[submodule "jor1k"]
+	path = jor1k
+	url = https://github.com/andrakis/jor1k.git
+	branch = nodejs_support

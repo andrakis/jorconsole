@@ -21,7 +21,6 @@
   "dependencies": {
     "blessed": "^0.1.81",
     "canvas": "*",
-    "jor1k": "s-macke/jor1k"
   },
   "devDependencies": {
     "jshint": "latest",
