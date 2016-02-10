@@ -1,0 +1,3 @@
+[submodule "jor1k-legacy"]
+	path = jor1k-legacy
+	url = https://github.com/andrakis/jor1k-legacy
