@@ -1,0 +1,3 @@
+#!/bin/sh
+
+node_modules/.bin/browserify jor1k/js/worker/worker.js lib/workershim.js -o runtime/jor1k-worker-min.js

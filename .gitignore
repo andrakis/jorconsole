@@ -1,0 +1,4 @@
+node_modules
+*.swp
+.idea
+runtime/jor1k-worker-min.js

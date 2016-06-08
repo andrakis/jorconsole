@@ -8,15 +8,28 @@ JorConsole aims to provide standard console IO to the JOR1K emulator.
 The goal is to get a working JOR1K emulator running on a local system,
 using local IO, instead of running in a web browser.
 
+This is the modern implementation, using the current jor1k sources -
+this includes bugfixes, placing the worker on a separate thread, and
+a 9p filesystem.
+
+This is currently a work in progress, and whilst the kernel boots,
+there is missing functionality required for the kernel to finish
+booting.
+
 
 Running
 --------
 
-Ensure your submodules are up to date:
+Ensure your npm modules are installed:
 
-	git submodule update --init
+	npm install
 
-Then simply run index.js from the top level directory (where this file is):
+NPM will automatically compile the worker thread, but if changes are made
+you can manually recompile it via running:
+
+	./compile
+
+Run the emulator:
 
 	node index.js
 
@@ -24,19 +37,15 @@ Then simply run index.js from the top level directory (where this file is):
 What works
 ----------
 
-The system boots into an interactive Linux session. You can run most normal
-shell commands including top. The console assumes your TTY will handle all
-of the text rendering (including special characters and control codes.)
+This version, based upon the latest jor1k, currently boots to a certain
+point and then halts due to missing replacement functions for features
+like setTimeout.
 
 
 What does not work
 ------------------
 
-* Pasting content into the emulator (only the first character is taken)
-* Special keyboard keys (ctrl+ variants)
-* Framebuffer
-* Text input on Cygwin (see W1)
-* Networking
+* Everything.
 
 
 Little Tricks
@@ -51,6 +60,7 @@ Feature planning
 
 The order of features is intended to be:
 
+* Finish implementing missing functionality
 * Finish keyboard input (currently quite a few keys dont work)
 * Implement a Framebuffer device using node-canvas
 * Fix input on Windows or non-TTY devices
