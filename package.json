@@ -24,7 +24,8 @@
     "jor1k": "https://github.com/s-macke/jor1k.git",
     "marshal": "https://github.com/andrakis/node-marshal.git",
     "websocket": "^1.0.22",
-    "webworker-threads": "^0.6.2"
+    "webworker-threads": "^0.6.2",
+    "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {},
   "scripts": {
