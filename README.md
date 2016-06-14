@@ -13,9 +13,9 @@ this includes bugfixes, placing the worker on a separate thread, and
 a 9p filesystem.
 
 This is currently a work in progress, and whilst the kernel boots,
-there is missing functionality required for the kernel to finish
-booting.
-
+keyboard input does not currently work. It can however run some
+applications (such as top) by modifying the init.d/rcS file in the
+jor1k-sysroot/or1k/basefs/ directory.
 
 Running
 --------
@@ -24,28 +24,28 @@ Ensure your npm modules are installed:
 
 	npm install
 
-NPM will automatically compile the worker thread, but if changes are made
-you can manually recompile it via running:
+Recompile and run the emulator using:
 
-	./compile
-
-Run the emulator:
-
-	node index.js
+	./run
 
 
 What works
 ----------
 
-This version, based upon the latest jor1k, currently boots to a certain
-point and then halts due to missing replacement functions for features
-like setTimeout.
+This version, based upon the latest jor1k, currently boots to the shell and
+waits for input. However, the keyboard handling is not finished yet,
+resulting in a segfault, or nothing happening.
+
+In addition, applications such as 'top' will run once and then appears to
+crash the emulator.
 
 
 What does not work
 ------------------
 
-* Everything.
+* Keyboard input
+* Networking
+* Stability
 
 
 Little Tricks
