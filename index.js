@@ -3,7 +3,8 @@
  */
 
 var fs = require('fs');
-var JorConsole = require('./lib/jorconsole');
+var jorconsole = require('./lib/jorconsole');
+var JorConsole = jorconsole.jorConsole;
 
 //var httpBase = "https://s-macke.github.io/jor1k/";
 var httpBase = "file://";
