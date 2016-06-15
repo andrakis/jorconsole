@@ -1,3 +1,3 @@
 #!/bin/sh
 
-./compile && node index.js
+node index.js
