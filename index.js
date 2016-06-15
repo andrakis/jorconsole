@@ -19,9 +19,12 @@ if(!fs.existsSync(fileBase + vmlinux)) {
 	}
 }
 
+var cpu = 'safe';
+
 var jc = new JorConsole({
 	path: httpBase + fileBase,
 	system: {
-		kernelURL: vmlinux
+		kernelURL: vmlinux,
+		cpu: cpu
 	}
 });
