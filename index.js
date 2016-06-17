@@ -19,9 +19,15 @@ if(!fs.existsSync(fileBase + vmlinux)) {
 	}
 }
 
+var threading = 'webthreads';
+// also available: webworker
+//threading = 'webworker';
+
 var jc = new JorConsole({
 	path: httpBase + fileBase,
 	system: {
-		kernelURL: vmlinux
-	}
+		kernelURL: vmlinux,
+		cpu: 'safe',
+	},
+	threading: threading,
 });
