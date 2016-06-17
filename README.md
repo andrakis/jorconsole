@@ -43,6 +43,7 @@ waits for input. It can run any programs compiled for OR1K.
 What does not work
 ------------------
 
+* Some keyboard keys do not work (eg arrows)
 * Networking
 
 
@@ -58,7 +59,7 @@ Feature planning
 
 The order of features is intended to be:
 
+* Networking support
 * Implement a Framebuffer device using node-canvas
 * Fix input on Windows or non-TTY devices
-* Networking support
 
