@@ -30,6 +30,7 @@ var threading = 'webthreads';
 // also available: webworker
 //threading = 'webworker';
 var cpu = 'safe';
+cpu = 'asm';
 
 var jc = new JorConsole({
 	path: httpBase + fileBase,
