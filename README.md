@@ -23,6 +23,11 @@ Ensure your npm modules are installed:
 
 	npm install
 
+Please also ensure you have updated your submodules, as the path used
+for jor1k-sysroot has been updated to a personal fork with more features.
+This fork includes all of the games and utilities (compilers, etc) for
+Jor1K.
+
 Run the emulator using:
 
 	node index
