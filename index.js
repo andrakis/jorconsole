@@ -10,7 +10,7 @@ var useSimpleFs = false;
 
 //var httpBase = "https://s-macke.github.io/jor1k/";
 var httpBase = "file://";
-var fileBase = __dirname + "/" + "jor1k-sysroot/or1k/";
+var realBase = fileBase = __dirname + "/" + "jor1k-sysroot/or1k/";
 var fileSrc  = "basefs.json";
 if(!useSimpleFs) {
 	fileBase = __dirname + "/" + "jor1k-sysroot/fs/";
@@ -19,7 +19,7 @@ if(!useSimpleFs) {
 
 var vmlinux = "vmlinux.bin";
 if(!fs.existsSync(fileBase + vmlinux)) {
-	console.log("Consider unpacking vmlinux using: bunzip2 -k vmlinux.bin.bz2 in the " + fileBase + " directory");
+	console.log("Consider unpacking vmlinux using: bunzip2 -k vmlinux.bin.bz2 in the " + realBase + " directory");
 	vmlinux += ".bz2";
 	if(!fs.existsSync(fileBase + vmlinux)) {
 		console.log("Couldn't find " + fileBase + vmlinux + ", were the submodules initialized? Kernel probably won't boot");
