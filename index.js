@@ -26,11 +26,19 @@ if(!fs.existsSync(fileBase + vmlinux)) {
 	}
 }
 
+var ncores = 1;
 var threading = 'webthreads';
 // also available: webworker
 //threading = 'webworker';
 var cpu = 'safe';
 cpu = 'asm';
+
+// Not recommended: kernel fails to find root
+if(false) {
+	cpu = 'smp';
+	ncores = 2;
+	vmlinux = "vmlinuxsmp.bin.bz2";
+}
 
 var jc = new JorConsole({
 	path: httpBase + fileBase,
@@ -38,8 +46,9 @@ var jc = new JorConsole({
 		basefsURL: fileSrc,
 	},
 	system: {
+		cpu: cpu,
 		kernelURL: vmlinux,
-		cpu: cpu
+		ncores: ncores,
 	},
 	threading: threading,
 });
