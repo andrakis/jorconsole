@@ -1,3 +1,6 @@
 [submodule "jor1k-sysroot"]
 	path = jor1k-sysroot
 	url = https://github.com/andrakis/jor1k-sysroot.git
+[submodule "jor1k"]
+	path = jor1k
+	url = https://github.com/s-macke/jor1k.git
