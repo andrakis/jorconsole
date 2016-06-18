@@ -41,6 +41,7 @@ if(false) {
 }
 
 var relayURL = 'https://relay.widgetry.org/';
+//relayURL = false; // disable networking
 
 var jc = new JorConsole({
 	path: httpBase + fileBase,

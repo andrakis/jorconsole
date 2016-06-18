@@ -4,17 +4,19 @@ JorConsole
 About
 -----
 
-JorConsole aims to provide standard console IO to the JOR1K emulator.
-The goal is to get a working JOR1K emulator running on a local system,
+JorConsole provides a standard console IO to the JOR1K emulator.
+It provides a working JOR1K emulator running on a local system,
 using local IO, instead of running in a web browser.
 
-This is the modern implementation, using the current jor1k sources -
-this includes bugfixes, placing the worker on a separate thread, and
-a 9p filesystem.
+It requires no native node modules, so can be run on systems without
+a native compiler. Networking support does require a native node module,
+but this is an optional dependency.
 
-This is currently a work in progress. The kernel boots and can run
-interactively as you would expect. However, networking and saving
-local files is not currently implemented.
+This is the modern implementation, using the current jor1k sources -
+this includes bugfixes, placing the worker on a separate thread,
+networking support, and a 9p filesystem.
+
+All keyboard handling issues are resolved.
 
 Running
 --------
@@ -47,7 +49,9 @@ a native node module is networking.
 What does not work
 ------------------
 
-* Some keyboard keys do not work (eg arrows)
+* Framebuffer
+* Sound
+* Saving files locally (though you can scp files)
 
 Little Tricks
 -------------
@@ -61,6 +65,12 @@ Feature planning
 
 The order of features is intended to be:
 
-* Implement a Framebuffer device using node-canvas
+* Optional extras:
+  * Implement a Framebuffer device using node-canvas
+  * Saving and loading virtual machine state
+  * Local filesystem / loop filesystem via 9p
+  * Extend abilities of filesystem loader
+    * Remove requirement for fs.json
+* Sound
 * Fix input on Windows or non-TTY devices
 
