@@ -26,6 +26,9 @@
     "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {},
+  "optionalDependencies": {
+    "websocket": "^1.0.22"
+  },
   "scripts": {
     "postinstall": "git submodule update --init"
   },

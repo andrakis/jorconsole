@@ -39,13 +39,15 @@ What works
 This version, based upon the latest jor1k, currently boots to the shell and
 waits for input. It can run any programs compiled for OR1K.
 
+Networking support is available, provided you can build the optional
+dependency websockets - if not available the emulator will continue
+without networking support. This means that the only feature that requires
+a native node module is networking.
 
 What does not work
 ------------------
 
 * Some keyboard keys do not work (eg arrows)
-* Networking
-
 
 Little Tricks
 -------------
@@ -59,7 +61,6 @@ Feature planning
 
 The order of features is intended to be:
 
-* Networking support
 * Implement a Framebuffer device using node-canvas
 * Fix input on Windows or non-TTY devices
 
