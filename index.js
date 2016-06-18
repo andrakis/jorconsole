@@ -40,11 +40,14 @@ if(false) {
 	vmlinux = "vmlinuxsmp.bin.bz2";
 }
 
+var relayURL = 'https://relay.widgetry.org/';
+
 var jc = new JorConsole({
 	path: httpBase + fileBase,
 	fs: {
 		basefsURL: fileSrc,
 	},
+	relayURL: relayURL,
 	system: {
 		cpu: cpu,
 		kernelURL: vmlinux,
