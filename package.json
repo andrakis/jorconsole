@@ -22,7 +22,6 @@
     "cli-table2": "^0.2.0",
     "jor1k": "https://github.com/s-macke/jor1k.git",
     "marshal": "https://github.com/andrakis/node-marshal.git",
-    "websocket": "^1.0.22",
     "webthreads": "https://github.com/andrakis/node-webthreads.git",
     "xmlhttprequest": "^1.8.0"
   },
