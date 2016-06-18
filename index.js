@@ -6,6 +6,8 @@ var fs = require('fs');
 var jorconsole = require('./lib/jorconsole');
 var JorConsole = jorconsole.jorConsole;
 
+var memorysize = 64; // memory available in mb
+
 var useSimpleFs = false;
 
 //var httpBase = "https://s-macke.github.io/jor1k/";
@@ -52,6 +54,7 @@ var jc = new JorConsole({
 	system: {
 		cpu: cpu,
 		kernelURL: vmlinux,
+		memorysize: memorysize,
 		ncores: ncores,
 	},
 	threading: threading,
