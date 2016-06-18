@@ -34,6 +34,8 @@ Run the emulator using:
 
 	node index
 
+Exit the emulator by pressing CTRL+X X, that is CTRL and X, then X again.
+
 
 What works
 ----------
@@ -58,6 +60,7 @@ What does not work
 ------------------
 
 * Framebuffer
+* SMP and RISCV processors
 * Sound
 * Saving files locally (though you can scp files)
 
@@ -88,6 +91,7 @@ The order of features is intended to be:
   * Local filesystem / loop filesystem via 9p
   * Extend abilities of filesystem loader
     * Remove requirement for fs.json
+* SMP and RISCV processors
 * Sound
 * Fix input on Windows or non-TTY devices
 
