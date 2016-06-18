@@ -46,6 +46,14 @@ dependency websockets - if not available the emulator will continue
 without networking support. This means that the only feature that requires
 a native node module is networking.
 
+The `asm` OR1K engine (default) includes proper timing and will sleep
+when idle, providing the best emulation experience. The `safe` engine
+(selectable in `index.js`) will always consume 100% cpu, but may be
+more stable than the `asm` engine.
+
+Typically however, the `asm` engine is perfectly stable.
+
+
 What does not work
 ------------------
 
@@ -53,11 +61,20 @@ What does not work
 * Sound
 * Saving files locally (though you can scp files)
 
-Little Tricks
+Useful Key Combinations
 -------------
 
-* Press CTRL+P to print out the CPU state
-* Press CTRL+X to exit the emulator
+The emulator is controlled by a special key combination, CTRL+X then a
+special key. For example, pressing CTRL and X at the same time, then X.
+
+Below are the available key sequences. Take note of the exit command, as
+pressing CTRL+C will not exit the emulator.
+
+* Press CTRL+X X to exit the emulator
+* Press CTRL+X P to print out the CPU state
+* Press CTRL+X I to enable an instructions-per-second counter
+
+* CTRL+C will not exit the emulator, as it is useful in linux applications.
 * CTRL+C should be captured by the emulator, but under Cygwin it quits the program
 
 Feature planning
