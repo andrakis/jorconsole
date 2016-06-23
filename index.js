@@ -6,6 +6,8 @@ var fs = require('fs');
 var jorconsole = require('./lib/jorconsole');
 var JorConsole = jorconsole.jorConsole;
 
+var memorysize = 64; // memory available in mb
+
 var useSimpleFs = false;
 
 //var httpBase = "https://s-macke.github.io/jor1k/";
@@ -40,14 +42,19 @@ if(false) {
 	vmlinux = "vmlinuxsmp.bin.bz2";
 }
 
+var relayURL = 'https://relay.widgetry.org/';
+//relayURL = false; // disable networking
+
 var jc = new JorConsole({
 	path: httpBase + fileBase,
 	fs: {
 		basefsURL: fileSrc,
 	},
+	relayURL: relayURL,
 	system: {
 		cpu: cpu,
 		kernelURL: vmlinux,
+		memorysize: memorysize,
 		ncores: ncores,
 	},
 	threading: threading,
