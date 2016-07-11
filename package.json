@@ -21,6 +21,7 @@
   "dependencies": {
     "cli-table2": "^0.2.0",
     "marshal": "https://github.com/andrakis/node-marshal.git",
+    "node-getopt": "^0.2.3",
     "webthreads": "https://github.com/andrakis/node-webthreads.git",
     "xmlhttprequest": "^1.8.0"
   },
