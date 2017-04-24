@@ -17,14 +17,14 @@ var networkEnabled = false;
 
 
 var getopt = new Getopt([
-	['m', 'memory=ARG', 'Set memory size (default: 32)'],
+	['m', 'memory=ARG', `Set memory size (default: ${memorysize})`],
 	['s', 'cpu-safe', 'Use safe CPU'],
 	['a', 'cpu-asm', 'Use assembly CPU (default)'],
 	['S', 'cpu-smp', 'Use SMP CPU (buggy)'],
 	['C', 'cpu-cores=ARG', 'SMP CPU cores (default: 2)'],
 	['v', 'vmlinux=ARG', 'Set vmlinux path (default: autodetected)'],
 	['n', 'network', 'Enable networking'],
-	['r', 'relay=ARG', 'Set networking relay (default: widgetry)'],
+	['r', 'relay=ARG', `Set networking relay (default: ${relayURL})`],
 	['f', 'simple-fs', 'Use simple filesystem (no games, demos, etc)'],
 	['h', 'help', 'Show this help']
 ]);
@@ -54,14 +54,15 @@ if(opt.options['simple-fs']) useSimpleFs = true;
 if(!networkEnabled) relayURL = false;
 
 var httpBase = "file://";
-var realBase = fileBase = __dirname + "/" + "jor1k-sysroot/or1k/";
-var fileSrc  = "basefs.json";
+var realBase = fileBase = __dirname + "/" + "jor1k-sysroot/";
+var BasefsJson  = "or1k/basefs.json";
+var extBase = __dirname + "/" + "jor1k-sysroot/";
+var extFsUrl = "";
 if(!useSimpleFs) {
-	fileBase = __dirname + "/" + "jor1k-sysroot/fs/";
-	fileSrc  = "fs.json";
+	extFsUrl = "fs.json";
 }
 
-var vmlinux = "vmlinux.bin";
+var vmlinux = "or1k/vmlinux.bin";
 if(!fs.existsSync(fileBase + vmlinux)) {
 	console.log("Consider unpacking vmlinux using: bunzip2 -k vmlinux.bin.bz2 in the " + realBase + " directory");
 	vmlinux += ".bz2";
@@ -76,12 +77,15 @@ console.log(
 	`	CPU Cores: ${ncores}\n` +
 	`	Memory: ${memorysize}\n` +
 	`	Kernel: ${vmlinux}\n` +
-	`	Networking: ${relayURL}\n`
+	`	Networking: ${relayURL}\n` +
+	`	Base FS: ${fileBase}\n` +
+	`	Ext  FS: ${extFsUrl}\n`
 );
 var jc = new JorConsole({
 	path: httpBase + fileBase,
 	fs: {
-		basefsURL: fileSrc,
+		basefsURL: BasefsJson,
+		extendedfsURL: extFsUrl,
 	},
 	relayURL: relayURL,
 	system: {

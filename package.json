@@ -1,6 +1,6 @@
 {
   "name": "jorconsole",
-  "version": "1.2.2",
+  "version": "1.4.0",
   "description": "Run a Virtual Machine using Jor1k as the platform",
   "contributors": [],
   "keywords": [
@@ -30,7 +30,7 @@
     "websocket": "^1.0.22"
   },
   "scripts": {
-    "postinstall": "git submodule update --init"
+    "postinstall": "git submodule update --init && (cd jor1k-sysroot/or1k && bunzip2 -k vmlinux.bin.bz2)"
   },
   "engines": {
     "node": ">= 5.0.0"
