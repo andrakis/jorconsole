@@ -16,10 +16,8 @@ This is the modern implementation, using the current jor1k sources -
 this includes bugfixes, placing the worker on a separate thread,
 networking support, and a 9p filesystem.
 
-All keyboard handling issues are resolved.
-
 Running
---------
+-------
 
 Ensure your npm modules are installed:
 
@@ -34,8 +32,33 @@ Run the emulator using:
 
 	node index
 
+For network support:
+
+	node index -n
+
 Exit the emulator by pressing CTRL+X X, that is CTRL and X, then X again.
 
+
+Using a local websocket proxy
+-----------------------------
+
+By default, the websocket proxy at relay.widgetry.org is used. However,
+you can install [Benjamincburn's Docker container](https://github.com/benjamincburns/websockproxy) and use that for local
+network and internet access.
+
+To get started quickly with it:
+
+	docker run --privileged -p 8080:80 --name relay benjamincburns/jor1k-relay:latest
+
+To start the container at a later date:
+
+	docker start relay
+
+To run JorConsole with your local relay:
+
+	node index.js --network --relay=http://localhost:8080/
+
+For more information, see the file [localnet.sh](https://github.com/andrakis/jorconsole/blob/master/localnet.sh).
 
 What works
 ----------
@@ -65,7 +88,7 @@ What does not work
 * Saving files locally (though you can scp files)
 
 Useful Key Combinations
--------------
+-----------------------
 
 The emulator is controlled by a special key combination, CTRL+X then a
 special key. For example, pressing CTRL and X at the same time, then X.
