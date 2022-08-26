@@ -14,7 +14,7 @@ var useSimpleFs = false;
 var cpu = 'asm';
 var relayURL = 'https://relay.widgetry.org/';
 var networkEnabled = false;
-
+var vmlinux = "or1k/vmlinux.bin";
 
 var getopt = new Getopt([
 	['m', 'memory=ARG', `Set memory size (default: ${memorysize})`],
@@ -44,7 +44,7 @@ if(opt.options.help) {
 if(opt.options['memory']) memorysize = parseInt(opt.options['memory']);
 if(opt.options['cpu-safe']) cpu = 'safe';
 if(opt.options['cpu-asm']) cpu = 'asm';
-if(opt.options['cpu-smp']) { cpu = 'smp'; ncores = 2; vmlinux = "vmlinuxsmp.bin.bz2"; }
+if(opt.options['cpu-smp']) { cpu = 'smp'; ncores = 2; vmlinux = "or1k/vmlinuxsmp.bin.bz2"; }
 if(opt.options['cpu-cores']) ncores = parseInt(opt.options['cpu-cores']);
 if(opt.options['vmlinux']) vmlinux = opt.options['vmlinux'];
 if(opt.options['network']) networkEnabled = true;
@@ -62,7 +62,6 @@ if(!useSimpleFs) {
 	extFsUrl = "fs.json";
 }
 
-var vmlinux = "or1k/vmlinux.bin";
 if(!fs.existsSync(fileBase + vmlinux)) {
 	console.log("Consider unpacking vmlinux using: bunzip2 -k vmlinux.bin.bz2 in the " + realBase + " directory");
 	vmlinux += ".bz2";
